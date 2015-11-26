@@ -1,0 +1,67 @@
+[
+    {
+        "text": "Conforms to the John Papa style guide",
+        "done": false,
+        "type": "Construction And Style"
+    },
+    {
+        "text": "Interpolates data from the API",
+        "done": true,
+        "type": "Templating"
+    },
+    {
+        "text": "Has a repeater",
+        "done": true,
+        "type": "Templating"
+    },
+    {
+        "text": "Can modify a particular item in a repeater",
+        "done": true,
+        "type": "Templating"
+    },
+    {
+        "text": "Modifying css classes based on a scope value",
+        "done": false,
+        "type": "Templating"
+    },
+    {
+        "text": "Uses UI router",
+        "done": false,
+        "type": "Routing"
+    },
+    {
+        "text": "Has nested views",
+        "done": false,
+        "type": "Routing"
+    },
+    {
+        "text": "Uses a route parameter to dynamically change content",
+        "done": false,
+        "type": "Routing"
+    },
+    {
+        "text": "Interacts with the GIS API",
+        "done": false,
+        "type": "Requests"
+    },
+    {
+        "text": "Uses the $http module for some requests",
+        "done": false,
+        "type": "Requests"
+    },
+    {
+        "text": "Uses Restangular for other requests",
+        "done": false,
+        "type": "Requests"
+    },
+    {
+        "text": "Has all logic relating to requests in a service",
+        "done": false,
+        "type": "Requests"
+    },
+    {
+        "text": "Uses a response in terceptortoredirectuserswhentheygeta404fromtheAPI",
+        "done": false,
+        "type": "Requests"
+    }
+]

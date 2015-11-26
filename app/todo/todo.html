@@ -1,0 +1,68 @@
+<div class="container" ng-controller="todoController as vm">
+  <div class="alert alert-info">
+	      <h3>Max's First Angular App</h3>
+		  <p>{{vm.remaining()}} of {{vm.todos.length}} to dos remaining</p>
+	      <p>Sort Type: {{ sortType }}</p>
+	      <p>Sort Reverse: {{ sortReverse }}</p>
+	      <p>Search Query: {{ query }}</p> 
+		  [<a href="" ng-click="vm.archive()">Remove Done</a> ]  
+	    </div>
+		
+		
+	    <form>
+	      <div class="form-group">
+	        <div class="input-group">
+	          <div class="input-group-addon"><i class="fa fa-search"></i></div>
+	          <input type="text" class="form-control" placeholder="Search Todos" ng-model="query">
+	        </div>      
+	      </div>
+	    </form>
+		
+	    <form ng-submit="vm.addTodo()">
+	      <div class="form-group">
+	        <div class="input-group">
+	          <div class="input-group-addon"><i class="fa fa-pencil"></i></div>
+			  <input type="text" class="form-control" ng-model="vm.todoText" placeholder="add new todo here" style="width: 90%">
+			  <input class="btn-primary form-control" type="submit" value="add" style="width: 10%">
+	        </div>      
+	      </div>
+	    </form>
+
+	  <table class="table table-bordered table-striped">
+    
+	    <thead>
+	      <tr>
+	        <td>
+	          <a href="#" ng-click="sortType = 'done'; sortReverse = !sortReverse">
+	            Status 
+	            <span ng-show="sortType == 'done' && !sortReverse" class="fa fa-caret-down"></span>
+	            <span ng-show="sortType == 'done' && sortReverse" class="fa fa-caret-up"></span>
+	          </a>
+	        </td>
+	        <td>
+	          <a href="#" ng-click="sortType = 'text'; sortReverse = !sortReverse">
+	          Todo 
+	            <span ng-show="sortType == 'text' && !sortReverse" class="fa fa-caret-down"></span>
+	            <span ng-show="sortType == 'text' && sortReverse" class="fa fa-caret-up"></span>
+	          </a>
+	        </td>
+            <td>
+	          <a href="#" ng-click="sortType = 'type'; sortReverse = !sortReverse">
+	          Todo Type 
+	            <span ng-show="sortType == 'type' && !sortReverse" class="fa fa-caret-down"></span>
+	            <span ng-show="sortType == 'type' && sortReverse" class="fa fa-caret-up"></span>
+	          </a>
+	        </td>
+	      </tr>
+	    </thead>
+    
+	    <tbody>
+	      <tr ng-repeat="todo in vm.todos | orderBy:sortType:sortReverse | filter:query">
+	        <td><input type="checkbox" ng-model="todo.done"></td>
+	        <td>{{todo.text}}</td>
+			<td>{{todo.type}}</td>
+	      </tr>
+	    </tbody>
+    
+	  </table>
+</div>
